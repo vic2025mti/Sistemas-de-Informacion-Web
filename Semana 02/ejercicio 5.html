@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edad dentro de unos años</title>
+</head>
+<body>
+    <h1>Ingrese su edad actual </h1>
+    <label for="edad">Edad:</label>
+    <input type="text" id="edad"><br><br>
+    
+    
+    
+    <button onclick="mostrarEdad()">Edad en el futuro</button>
+    
+    <p id="mensaje"></p>
+    
+    <script>
+        function mostrarEdad() {
+		var edad = Number(document.getElementById("edad").value);
+				
+              alert("En 5 años tendrás: " + (edad+5)  + " años.\n" +
+                "En 10 años tendrás: " + (edad+10) + " años.\n" +
+                 "En 100 años tendrás: " + (edad+100) + " años.");
+				         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVA(10%)</title>
+</head>
+<body>
+    <h1>Ingrese el monto </h1>
+    <label for="edad">monto:</label>
+    <input type="text" id="monto"><br><br>
+           
+    <button onclick="mostrarIva()">costo final</button>
+    
+    <p id="mensaje"></p>
+    
+    <script>
+        function mostrarIva() {
+		var monto = Number(document.getElementById("monto").value);
+				
+              alert("El monto sin IVA es: " + (monto - 0.1*monto)  + " guaranies\n"+
+			 "El monto del  IVA es: " + 0.1*(monto - 0.1*monto)  + " guaranies\n"  );
+                				         }
+    </script>
+</body>
+</html>

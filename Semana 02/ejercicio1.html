@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cotizacion</title>
+
+</head>
+<body>
+    <form id="formulario">
+        <label for="cantidad">Ingrese Cantidad:</label><br>
+        <input type="number" id="cantidad" name="cantidad"><br><br>
+        
+        <label for="cotizacion">Ingrese Cotización:</label><br>
+        <input type="number" id="cotizacion" name="cotizacion"><br><br>
+        
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+
+    <script>
+        // Función para validar si el campo nombre está vacío
+        function validarFormulario() {
+            var valor_en_dolares = document.getElementById("cantidad").value / document.getElementById("cotizacion").value;
+            alert("El Valor en dólares es: " + valor_en_dolares);
+        }
+    </script>
+</body>
+</html>
