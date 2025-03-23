@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura: Celsius a Fahrenheit</title>
+
+</head>
+<body>
+    <form id="formulario">
+        <label for="Celsius">Ingrese Cantidad en Celsius:</label><br>
+        <input type="number" id="Celsius" name="Celsius"><br><br>
+        
+               
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
+
+    <script>
+        // Función para validar si el campo nombre está vacío
+        function validarFormulario() {
+		
+            var valor_en_Fahrenheit = (document.getElementById("Celsius").value)*9/5+32;
+            alert("El Valor en Fahrenheit es: " + valor_en_Fahrenheit);
+        }
+    </script>
+</body>
+</html>

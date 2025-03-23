@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferencia entre Fechas</title>
+</head>
+<body>
+    <h1>Ingrese dos fechas (dd/mm/yyyy)</h1>
+
+    <label>Fecha 1:</label>
+    <input type="text" id="fecha1" placeholder="dd/mm/yyyy"><br><br>
+
+    <label>Fecha 2:</label>
+    <input type="text" id="fecha2" placeholder="dd/mm/yyyy"><br><br>
+    
+    <button onclick="calcularDiferencia()">Calcular Diferencia</button>
+
+    <script>
+        function calcularDiferencia() {
+            var f1 = document.getElementById("fecha1").value;
+            var f2 = document.getElementById("fecha2").value;
+
+            var partes1 = f1.split("/");
+            var partes2 = f2.split("/");
+
+            if (partes1.length !== 3 || partes2.length !== 3) {
+                return alert("Formato incorrecto. Use dd/mm/yyyy.");
+            }
+
+            var d1 = Number(partes1[0]), m1 = Number(partes1[1]), a1 = Number(partes1[2]);
+            var d2 = Number(partes2[0]), m2 = Number(partes2[1]), a2 = Number(partes2[2]);
+
+            if (!esFechaValida(d1, m1, a1) || !esFechaValida(d2, m2, a2)) {
+                return alert("Fecha no válida.");
+            }
+
+            var date1 = new Date(a1, m1 - 1, d1);
+            var date2 = new Date(a2, m2 - 1, d2);
+            var diff = (date2 - date1) / (1000 * 60 * 60 * 24);
+
+            alert(diff < 0 ? "Error: La segunda fecha debe ser mayor." : "Diferencia: " + diff + " días.");
+        }
+
+        function esFechaValida(d, m, a) {
+            return (m >= 1 && m <= 12) && (d >= 1 && d <= 31) && (a >= 1000 && a <= 9999);
+        }
+    </script>
+</body>
+</html>

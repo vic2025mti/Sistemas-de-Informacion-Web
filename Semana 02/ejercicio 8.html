@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propina)</title>
+</head>
+<body>
+    <h1>Ingrese el gasto total </h1>
+    <label for="gasto">Gasto:</label>
+    <input type="text" id="gasto"><br><br>
+	
+	<h2>Ingrese el porcentaje </h2>
+    <label for="porcentaje">Porcentaje:</label>
+    <input type="text" id="porcentaje"><br><br>
+           
+    <button onclick="mostrarPropina()">La Propina</button>
+    
+    <p id="mensaje"></p>
+        <script>
+        function mostrarPropina() {
+		var gasto = Number(document.getElementById("gasto").value);
+		var porcentaje = Number(document.getElementById("porcentaje").value/100);
+				
+              alert("Elvalor de la Propina es: " + (gasto*porcentaje)  + " guaranies\n" );
+                				         }
+    </script>
+</body>
+</html>
